@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- PAGE INFO -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nome da janela</title>
+
+    
+    <!-- ICONES -->
+    <link rel="stylesheet" href="assets/fonts/style.css" />
+    <!-- asses enter ou tab, fonts enter ou tab, style enter ou tab. -->
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!--Styles (estilos)-->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"/>
+
+    
+  </head>
+  <body>
+    <header id="header">
+      <nav class="container">
+        <a class="logo" href="#">Beauty<span>Salon</span>.</a> <!-- "span" caso queira fazer uma formatação a parte na propria palavra. -->
+        <!-- MENU - inicio do topico -->
+        <div class="menu">
+          <ul class="grid">
+            <!-- note que quando adicionamos a classe "grid" os elementos da lista ficaram separados uma das outras. -->
+            <!-- "ul" abri uma lista não ordenada -->
+            <li><a class="title" href="#home">Inicio</a></li>
+            <!-- "#" significa o id-->
+            <!-- "a" abri um topico de link -->
+            <!-- "li" são os itens/topicos da lista, para facilitar para abrir uma sequencia de itens escreva ul>li*5>a -->
+            <li><a class="title" href="#about">Sobre</a></li>
+            <!-- "a" abri um topico de link -->
+            <!-- "li" são os itens/topicos da lista, para facilitar para abrir uma sequencia de itens escreva ul>li*5>a -->
+            <li><a class="title" href="#services">Serviços</a></li>
+            <!-- "a" abri um topico de link -->
+            <!-- "li" são os itens/topicos da lista, para facilitar para abrir uma sequencia de itens escreva ul>li*5>a -->
+            <li><a class="title" href="#testimonials">Depoimentos</a></li>
+            <!-- "a" abri um topico de link -->
+            <!-- "li" são os itens/topicos da lista, para facilitar para abrir uma sequencia de itens escreva ul>li*5>a -->
+            <li><a class="title" href="#contact">Contato</a></li>
+            <!-- "a" abri um topico de link -->
+            <!-- "li" são os itens/topicos da lista, para facilitar para abrir uma sequencia de itens escreva ul>li*5>a -->
+          </ul>
+        </div>
+        <!-- /MENU - inal do tópico -->
+        <div class="toggle icon-menu"></div>
+        <!-- "div" cria classe -->
+        <div class="toggle icon-close"></div>
+        <!-- "div" cri classe -->
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- HOME -->
+      <section class="section" id="home">
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="mulher sorrindo secando o cabelho da mulher"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">Saúde natural para os seus cabelos</h2>
+            <p>
+              Um salão exclusivo em São Paulo, especializado em tratamentos
+              naturais.
+            </p>
+            <a class="button" href="#">Agendar um horário </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+
+      <!-- ABOUT -->
+      <!-- section.section#about>.container.grid.-->
+      <section class="section" id="about">
+        <div class="container grid">
+          <div class="image">
+            <!-- "src" copiar o endereço mundial referente nesso caso da imagem  -->
+            <img
+              src="https://images.unsplash.com/photo-1559599101-f09722fb4948?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+              alt="três mulheres sorrindo feito bestas"
+            />
+          </div>
+
+        <div class="text">
+          <!-- h2.title+p*3 -->
+          <h2 class="title">Sobre nós</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+            reprehenderit recusandae placeat exercitationem. Adipisci libero
+            neque assumenda ducimus hic saepe porro eius debitis aliquid? Dolore
+            laudantium nihil quaerat eum aut.
+          </p>
+          <br />
+          <!-- "br" - significa break quebra de linha  -->
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est atque
+            mollitia dolorem rerum debitis? Aspernatur, vel, laboriosam itaque
+            aliquid fugiat perspiciatis iusto minima praesentium eaque facilis
+            quis. Rem, fuga quod.
+          </p>
+          <br />
+          <!-- "br" - significa break quebra de linha  -->
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quod
+            sequi ullam necessitatibus, maiores facilis earum nisi temporibus
+            itaque dolorem in vel molestias eum esse quisquam veniam eaque nobis
+            minima?
+          </p>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+      
+      <!-- SERVICES -->
+      <!-- section.section#services>.container.grid. -->
+      <section class="section" id="services">
+        <div class="container grid">
+          <header>
+            <h2 class="title">Serviços</h2>
+              <p class= "subtitle">
+                Com mais de 10 anos no mercado, o <strong>Beautysalon</strong> já conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais
+              </p>
+          </header>
+          <div class="cards grid">
+          <!-- .cards*3>(.icon-)+h3.title+p -->
+            <div class="card">
+              <i class="icon-woman-hair"></i> <!-- "i" é usado ára icones -->
+              <h3 class="title">Terapia capilar</h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, maiores animi consectetur eveniet repellendus repudiandae possimus aliquam sapiente nobis nisi dicta? Adipisci consequuntur dicta harum repellendus fugiat neque assumenda id?</p>
+            </div>
+            <div class="card">
+              <i class="icon-trim"></i> <!-- "i" é usado para icones-->
+              <h3 class="title">Cortes</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem accusamus sunt alias ratione ipsam, dolorum necessitatibus, minus veniam obcaecati odit repudiandae! At odit ab laboriosam aperiam nam ducimus nulla corporis.</p>
+            </div>
+            <div class="card">
+              <i class="icon-cosmetic"></i> <!-- "i" é usado para icones -->
+              <h3 class="title">Tratamentos</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, magni tenetur assumenda nulla veritatis libero maxime, laudantium dolore quaerat eos perspiciatis recusandae illum reiciendis pariatur quae? Asperiores nesciunt ducimus repudiandae.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+     <!-- TESTIMONIALS --> 
+     <!-- section.section#testimonials>.container.grid>header>h2 -->
+      <section class="section" id="testimonials" >
+        <div class="container" data-ride=>
+          <header>
+            <h2 class="title">Depoimentos de quem já passou aqui</h2>
+          </header>
+          <div class="testimonials swiper">
+            <div class="swiper-wrapper">             
+              <div class="testimonial swiper-slide">
+                <blockquote><!-- "blockquote" - é uma caixa especial do HTML que significa que alguem esta falando alguma coisa, e não sou eu  -->
+                  <p>
+                    <span>&ldquo;</span> <!-- "&ldquo;" faz aparecer uma aspa diferenciada, aspa que abre -->
+                  <!-- '&lt' - escreve os caracteres que são guardados pelo HTML -->
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem eius deleniti vel tempora, laborum maxime molestiae mollitia aspernatur eaque repellendus nesciunt rem incidunt perferendis quasi velit a, eos odio voluptate.
+                  </p>
+                  <cite>
+                    <img 
+                      src="assets/fotos de figurntes/1.jpg" 
+                      alt="Foto de Wanessa Souza"
+                    />
+                    Wanessa Souza
+                  </cite> <!-- "cite" normalmente usado quando alguem citar algo, quando alguem argumentou algo. -->
+                </blockquote>
+              </div>
+  
+              <div class="testimonial swiper-slide">
+                <blockquote><!-- "blockquote" - é uma caixa especial do HTML que significa que alguem esta falando alguma coisa, e não sou eu  -->
+                  <p>
+                    <span>&ldquo;</span> <!-- "&ldquo;" faz aparecer uma aspa diferenciada, aspa que abre -->
+                  <!-- '&lt' - escreve os caracteres que são guardados pelo HTML -->
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem eius deleniti vel tempora, laborum maxime molestiae mollitia aspernatur eaque repellendus nesciunt rem incidunt perferendis quasi velit a, eos odio voluptate.
+                  </p>
+                  <cite>
+                    <img 
+                      src="assets/fotos de figurntes/71.jpg" 
+                      alt="Foto de Jéssica Lunes"
+                    />
+                    Jéssica Lunes
+                  </cite> <!-- "cite" normalmente usado quando alguem citar algo, quando alguemargumentou algo. -->
+                </blockquote>
+              </div>
+  
+              <div class="testimonial swiper-slide">
+                <blockquote><!-- "blockquote" - é uma caixa especial do HTML que significa que alguem esta falando alguma coisa, e não sou eu  -->
+                  <p>
+                    <span>&ldquo;</span> <!-- "&ldquo;" faz aparecer uma aspa diferenciada, aspa que abre -->
+                  <!-- '&lt' - escreve os caracteres que são guardados pelo HTML -->
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem eius deleniti vel tempora, laborum maxime molestiae mollitia aspernatur eaque repellendus nesciunt rem incidunt perferendis quasi velit a, eos odio voluptate.
+                  </p>
+                  <cite>
+                    <img 
+                      src="assets/fotos de figurntes/90.jpg" 
+                      alt="Foto de Sakura Sakamoto"
+                    />
+                    Sakura Sakamoto
+                  </cite> <!-- "cite" normalmente usado quando alguem citar algo, quando alguemargumentou algo. -->
+                </blockquote>
+              </div>
+
+            </div>
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+
+     <!-- CONTACT -->
+     <!-- section.section#contact>.container.grid -->
+      <section class="section" id="contact">
+        <div class="container grid">
+          <div class="text">
+            <h2 class="title">Entre em contato com a gente!</h2>
+              <p>
+                Entre em contato com a BeautySalon, queremos tirar suas dúvidas, ouvir suas crítcas e sugestões
+              </p>
+            <a 
+            href="https://api.whatsapp.com/send?phone=+5511998456754&text=Oi! Gostaria de agendar um horário" 
+            class="button"
+            target="_blank"><!-- target=_blank - abre uma nova página sem fechar a pagina original -->
+            
+            
+              <i class="icon-whatsapp"></i> Entrar em contato
+            </a>
+          </div>
+         
+          <div class="links">
+            <ul class="grid">
+              <li><i class="icon-phone"></i> 11 99845-6754</li>
+              <li><i class="icon-map-pin"></i> R. Amauri Souza, 346</li>
+              <li><i class="icon-mail"></i> contato@beautysalon.com</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <div class="divider-1"></div>
+
+    </main>
+
+    <footer class="section">
+      <div class="container grid">
+        <div class="brand">
+          <a class="logo logo-alt" href="#home">Beauty<span>Salon</span>.</a>
+          <p>©2021 Beautysalon.</p>
+          <p>Todos os direitos reservados.</p>
+        </div>
+        
+        <div class="social grid ">
+          <a href="https://instagram.com"target="_blank">
+            <i class="icon-instagram"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank">
+            <i class="icon-facebook"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank">
+            <i class="icon-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </footer><!-- "footer" - tag do html serve para trabalhar a estrutura de layout, utilizado para rodape -->
+
+    <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a><!-- nesta parte foi criado um link com icone de seta para cima, com intensão de oltar para o inicio da pagina -->
+
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- SCROOLREVEAL  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- MAIN -->
+    <script src="main.js"></script>
+    <!-- nesta parte estamos procurando ("src") o arquivo JS (JavaScript) -->
+  </body>
+</html>

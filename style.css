@@ -1,0 +1,702 @@
+/* ============== RESET ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none; /* estilo para texto em formato de lista, e nesse caso o "none" significa que nnão quer nenhum estilo  */
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto; /* a imagem se adpta ao 100% da largura na janela se modificando automaticamente ao inves de ela se manter com o formato da imagem original*/
+}
+
+/* ============== VARIABLES ===============*/
+:root {
+  --header-height: 4.5rem;
+
+  /* colors */
+  --hue: 159;
+  /* HSL*color*mode* */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+  /*font size: 100% que é equivalente a 16pixels */
+
+  /* font */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
+}
+
+/* ============== BASE ===============*/
+html {
+  scroll-behavior: smooth; /* comportamento de rolagem(scroll-behavior) suave (smooth) */
+}
+
+body {
+  font: 400 1rem var(--body-font);
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+.title {
+  font: 700 var(--title-font-size) var(--title-font);
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+
+.button {
+  background: var(--base-color);
+  color: var(--text-color-light);
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem var(--body-font);
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: var(--base-color-alt);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
+}
+
+/* ============== LAYOUT ===============*/
+.container {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.grid {
+  display: grid; /* quando uso a opção "grid" habilito uma condição */
+  gap: 2rem; /* essa condição seria o gap(que seria vão) */
+}
+
+.section {
+  padding: calc(5rem + var(--header-height)) 0;
+}
+
+.section .title {
+  margin-bottom: 1rem;
+}
+
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
+}
+
+.section header {
+  margin-bottom: 4rem;
+}
+
+.section header strong {
+  color: var(--base-color);
+}
+
+#header {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2rem;
+  display: flex;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--body-color);
+  width: 100%;
+  /*color: red;*/
+}
+
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2); /* "box" caixa e "shadow" sombra da caixa., como funciona no primeiro argumento a iluminação vem pela lateral no lado esquerdo a sombra aparece no lado direito, o segundo argumento a iluminação vem por cima e a sombra aparece na parte de baixo, o terceiro argumento o bloor seria uma camada escura, o quarto argumento seria o espalhamento da da smbra o quanto ela se dispersa. */
+}
+
+/* ============== LOGO ===============*/
+.logo {
+  font: 700 1.31rem var(--title-font);
+  color: var(--title-color);
+}
+
+.logo span {
+  color: var(--base-color);
+}
+
+.logo-alt span {
+  color: var(--body-color);
+}
+
+/* ============== NAVIGATION ===============*/
+nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav ul li {
+  /* na "nav", eu quero que procure "ul" e dentro dela procure "li" */
+  text-align: center; /* alinhamento do texto? centralizado */
+}
+
+nav ul li a {
+  transition: 0.2s; /* na "nav" quero que procure "ul" e dentro dela procure "li" e dentro dela procure os itens de "a" */
+  /* e aplique a trasição de 0,3segundos que seria o delay de animação, no caso se não definirmos onde sera aplicado essa transição ele aplicara em todas as propriedades ex: heigth, whidth, background, color.  */
+  position: relative; /* esse é o pai que possui a posição relativa. */
+}
+
+nav ul li a:hover,
+nav ul li a.active
+ {/* quando passar o hover(mouse em cima) quero que apliques as propriedades abaixo, r quando tiver com active em "a", plique tambem as mesmas propriedades.  */
+  /* na "nav" quero que procure "ul" e dentro dela procure "li" e dentro dela procure "a" encontrando assim seu itens. */
+  /* "hover" - quando eu passar o mouse por cima. */
+  color: var(--base-color); /* aplique a cor escolhida */
+  
+}
+
+nav ul li a::after {
+  /* na "nav" quero que procure o "ul" e dentro dela procure "li" dentro dela procure "a" encontrando assim seus itens, use aquela estrategia(::) do pseudo ou insude-element, mas no caso usaremos ("after") o depois de ou após */
+  content: ''; /* todo pseudo element ou insude element precisa existir um "content" declarando algo, e nesse caso pode ser nada escrito(vazio) */
+  width: 0%; /* largura 0% não aparecera a linha abaixo da palavra */
+  height: 2px; /* altura 2 pix (32/16) */
+  background: var(--base-color);
+  position: absolute; /* posição absoluta  em relação ao proximo pai dele que tive a posição relativa (relative) */
+  left: 0; /*  quero que começe a partir do lado esquerdo referente ao valor escrito */
+  bottom: -1.5rem; /* que que começe na parte de baixo referente ao valor escrito. */
+  transition: 0.2s; /* na transição é criado um delay */
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after { 
+  /* na "nav" quero que procure o "ul" e dentro dela procure "li" dentro dela procure "a" encontrando assim seus itens, quando eu passar o mouse por cima("hover") use aquela estrategia(::) do pseudo ou insude-element, mas no caso usaremos o depois de ou após("after"), e aplique a condição somente quando passar o mouse("hover") */
+  width: 100%;
+  
+}
+
+nav .menu {
+  /* na "nav" quero que procure a classe "menu" e vamos fazer as modificações. */
+  opacity: 0; /* "opacity" - deixa a intensidade do texto escura "1" ou transparente "0", porem ela ainda esta naquele local. */
+  visibility: hidden; /* visiilidade? hidden(escondido) faz o texto desaparecer, quando passa o mouse onde estaria o texto não é possivel encontra-lo. */
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none;
+}
+
+/* MOTRAR MENU */
+nav.show .menu {
+  /* "nav .show" - quando o nav estiver separado do show estariamos procurando algum show dentro da nav,agora "nav.show" quando nav esta junto de show ele vai receber uma classe show. */
+  opacity: 1; /* "opacity" - deixa a intensidade do texto escura "1" ou transparente "0", porem ela ainda esta naquele local. */
+  visibility: visible; /* visibilidade? visivel faz o texto aparecer. */
+  background: var(--body-color); /* cor do fundo do texto(caixa) */
+
+  height: 100vh; /* "vh" - view port height (ver a altura da janela) */
+  width: 100vw; /* "vw" - view port width (ver a largura da janela)*/
+
+  position: fixed; /* posição fixa */
+  top: 0; /* caixa começando no topo */
+  left: 0; /* caixa começando no lado esquerdo */
+
+  display: grid; /* display? "grid - cria uma caixa invisivel com base no no modelo criado */
+  place-content: center; /* centraliza o contéudo na caixa com os espaços adequados. */
+}
+
+nav.show .menu ul {
+  display: grid;
+}
+
+nav.show ul.grid {
+  /* o que acontece aqui ao inves de somar com o gap anterior ela vai apenas manter esse novo valor por motivos de a especifidade ser maior. */ /* "ul.grid" - quando ul estiver junto de grid ele vai reber a classe grid */
+  gap: 4rem;
+}
+
+/* TOGGLE MENU (interrutptor liga e desliga) */
+.toggle {
+  color: var(--base-color); /* cor dos icones */
+  font-size: 1.5rem; /* tamanho da fonte 1.5rem (para saber em pixels seria 1.5*16) */
+  cursor: pointer; /* quando aplico o "cursor: pointer" na horaa de passar o mouse em cima dos icones de navegação ao inves de aparecer a setinha do mouse ira aparece a mãozinha indicando assim que é um lugar onde se pode ter acesso rapido na pagina(link).  */
+}
+
+nav .icon-close {
+  /* na "nav" quero que procure a classe "icon-close" */
+  visibility: hidden; /* visibilidade? escondido - faz o elemento desaparecer */
+  opacity: 0; /* "opacity" - deixa a intensidade do texto escura "1" ou transparente "0", porem ela ainda esta naquele local. */
+
+  position: absolute; /* quando coloca a posição absoluta o "icon-close" aparece no lado esquerdo no topo. */
+  top: -1.5rem;
+  right: 1.5rem; /* nesta parte estamos posicionando o "icone-close" no lado direito a uma distância( a partir é claro do inicio do lado direito) de 1.5rem */
+  transition: 0.2s;
+}
+
+nav.show div.icon-close {
+  /* quando estiver no show(ele vai adicionar o "show" no "nav") ou seja quando clicar no botão do menu ele vai adicionar o "show" no "nav" porem ainda não aconteceu, e quando acontecer o "icon-close vai aparecer. */
+  visibility: visible; /* visibilidade? visivel faz o texto aparecer. */
+  opacity: 1; /* "opacity" - deixa a intensidade do texto escura "1" ou transparente "0", porem ela ainda esta naquele local. */
+  top: 1.5rem;
+}
+
+/* ============== HOME ===============*/
+#home {
+  overflow: hidden;
+}
+
+#home .container {
+  margin: 0;
+}
+
+#home .image {
+  position: relative;
+}
+
+#home .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -16.8%;
+  left: 16.7%;
+  z-index: 0;
+}
+
+#home .image img {
+  position: relative;
+  right: 2.93rem;
+}
+
+#home .image img,
+#home .image::before {
+  border-radius: 0.25rem;
+}
+
+#home .text {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  text-align: center;
+}
+
+#home .text h1 {
+  margin-bottom: 1rem;
+}
+
+#home .text p {
+  margin-bottom: 2rem;
+  /* max-width: 100%; */
+}
+
+/* ================= ABOUT =================== */
+#about {
+  background: white;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .image {
+  position: relative;
+}
+
+#about .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -8.3%; /* 34*100%/405 */
+  left: -33%; /* 192*100%/581 */
+  z-index: 0;
+}
+
+#about .image img {
+  position: relative;
+}
+
+#about .image img,
+#about .image::before {
+  border-radius: 0.25rem;
+}
+
+#about .text {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+/* ========= SERVICES ============= */
+.cards.grid {
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem, 0.25rem 0 0;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ============ TESTIMONIALS ===============  */
+#testimonials {
+  background: white;
+}
+
+#testimonials .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#testimonials header {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 0;
+}
+
+#testimonials blockquote {
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(34, 22, 22, 0.08);
+  border-radius: 0.25rem;
+}
+
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--title-color); /* mudou a cor do texto dos comentarios */
+}
+
+#testimonials blockquote p span {
+  /* no testimonials dentro "blockquote" procura o "p" e procura o "span" dentro do "p"  */
+  font: 700 3rem serif; /* familia serif - é uma famimlia de fonte diferente que ja tem dentro dos computadores */
+  position: absolute; /* quando aplico posição absoluta cria se uma camada em cima da camada anteriorm se não definir a quem sera relativo, ele ficara na janela(window)toda */
+  top: -0.375rem;
+  left: -1.875rem;
+  color: var(--base-color);
+}
+
+#testimonials cite {
+  display: flex; /* deixou a caixa com o conteudo(texto) na mesma altura da imagem(foto) */
+  align-items: center; /* nesta parte o (texto) da caixa ficou centralizado junto com a imagem. */
+  font-style: normal; /* os nomes criados estavam antes em formato italico, mudei para o normal. */
+}
+
+#testimonials cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover; /* pega o objeto/ imagem que esta dentro da tag img, pega ela e encaixe(fit) cobrindo(cover) todo o espaço que estiver ali  */
+  clip-path: circle(
+
+  ); /* é uma propriedade onde posso criar uma mascara, que no caso seria mudar o formato, que neste caso seria a imagem quadrada virar circular */
+  margin-right: 0.5rem; /* Nesta parte ele fez a imagem se afastar do seu lado direito 0.5rem(8pixels) */
+}
+
+/* swiper */
+.swiper-slide {
+  height: auto;
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--base-color);
+}
+
+/* =============== CONTACT ======================= */
+#contact .grid {
+  gap: 4rem;
+}
+
+#contact .text p {
+  margin-bottom: 2rem;
+}
+
+#contact .button i,
+#contact ul li i {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+}
+
+#contact ul.grid {
+  gap: 2rem; /* espçamento entre os topicos */
+}
+
+#contact ul li {
+  display: flex;
+  align-items: center;
+}
+
+#contact ul li i {
+  color: var(--base-color); /* mudou a cor dos icones */
+}
+
+/* ========== FOOTER ================ */
+
+footer {
+  background: var(--base-color);
+}
+
+footer.section {
+  padding: 4rem 0;
+}
+
+footer .logo {
+  display: inline-block; /* footer .logo = é umelemento "a"; display:inline-block existe a opção margin-top, agora display:inline não existe essa opção margin top. */
+  margin-bottom: 1.5rem;
+}
+
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+footer i {
+  /* mudou o tamanho e a cor das logos do instgram, facebook, youtube */
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+}
+
+footer .social {
+  grid-auto-flow: column; /* grid-auto-flow = comlumn - faz automaticamente que as 3(instragam, facebook, youtube) logos fiquem separados em coluna a uma certa distancia */
+  width: fit-content; /* faz com que a caixa invisivel que faz o distanciamento entre as logos fique do mesmo tamanho da caixa das logos */
+}
+
+footer .social a {
+  /* o link "a" é um display inline */
+  /* margin-right: 2rem; */
+  /*  footer .social - display: flex-deixaria as 3 logos uma do lado da outra so que grudados, e então colocaria um gap dando um espaçamento de 2rem */
+  transition: 0.3s;
+  display: inline-block; /* display inline não recebe formatação do translateY e praticamente não recebe nenhuma formatação, agora display inline block recebe formatação do translateY e acredito tambem que recebe outros tipos de formatação*/
+}
+
+footer .social a:hover {
+  transform: translateY(
+    -5px
+  ); /*  esta parte faz com quando passamos o mouse por cima, os icones do instagram, facebook e youtube se mecham para cima com altura de 15pixels */
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  background: var(--base-color);
+  color: var(--text-color-light);
+
+  position: fixed; /* quando estou usando o absolute ou fixed, se cria um novo contexto, cria se uma caixa acima da outra caixa, no caso do fixed foi criado uma caixa fixa na pagina , um outro contexto no eixo Z, onde ele não se move */
+  right: 1rem;
+  bottom: 1rem;
+
+  padding: 0.5rem;
+  clip-path: circle();
+
+  font-size: 1.5rem;
+  line-height: 0; /* centralizou o seta para cima no centro do circulo */
+
+  visibility: hidden;
+  /*opacity: 0;*/
+
+  transition: 0.3s;
+  transform: translateY(
+    100%
+  ); /* esta parte faz com que a seta suma porem metade del aparece na tela */
+}
+
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(
+    0
+  ); /* esta parte faz com que a seta suma de vez da tel complementando o translanteY de 100%, e quando faz o rolameto para baixo ela parece com movimento evidente começando a partir de baixo para cima e vice versa */
+}
+
+/* ========== MEDIA QUERIES ============== */
+/* extra large devices: 1200 > (+1200) */
+@media (min-width: 1200px) {
+  /* reusable cases */
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header, 
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 3.125rem;
+  }
+
+  /* navigation */
+  nav .menu {
+    /* esta parte é do menu que aparecia os 5 topicos, antes era para mante-lo invisivel */
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex; /* os topicos do menu agora aparecem e ficam um do lado do outro */
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 700 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /* layout */
+  main {
+    margin-top: var(
+      --header-height
+    ); /* veja atentamente como esta escrito e os espaços entre cada palavra ou caractere, 2rem equivale a 32pixels (calculo 32/16) */
+  }
+
+
+  /* home */
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+
+  #home .image {
+    order: 1; /* order so funciona se ele estiver em uma caixa "grid ou flex" */
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /* about */
+  #about .container {
+    margin: 0; /* "0" em cima/baixo e "auto" nas laterais */
+    grid-auto-flow: column;
+  }
+
+  /* SERVICES */
+  .cards { /* caso o .cards estiver com "grid" no html a regra abaixo ira funcionar */
+    grid-template-columns: 1fr 1fr 1fr; /*  nesta parte ele pede para dividir o espaço em tres frações (fr) */
+
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /*  */
+
+  /* TESTIMONIALS */
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* contact */
+  #contact .container { /* por ser "grid" no HTML é possivel habilitar as funções abaixo */
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  #contact .text {
+    max-width: 25rem;
+  }
+
+  /* FOOTER */
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+
+ 
+
+/* large devices: 1023 > */
+
+/* larg devices: 992 > */
+@media (min-width: 992px) {
+  /* break point de 992px */ /* break points = midia querius é reponsavel por adicionar pontos de quebra(breakPoint) qundo o device neste caso o dispositivo alcançar 992px pra cima eu quero que ele faça um sequencia de css*/
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+} /* @ - significa regra dentro do () coloca  regra, caso não exista o "meta" no meu html especificado no inicio, o @media não funcionara; 992 para cima, min-wiwidth - largura pra cima; a media tem a ver com as dimensões da interface dos dispositivos, e no caso ela é formatada de acordo com os dispositivos */
+
+/* medium devices: 767 > - para tablets */
+
+}
